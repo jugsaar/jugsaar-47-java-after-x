@@ -7,6 +7,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.function.Predicate;
 
+/**
+ * Local Variable type inference style-guide: https://openjdk.java.net/projects/amber/LVTIstyle.html
+ */
 public class Example001_LocalVariableTypeInference {
 
     public static void main(String[] args) {
@@ -32,8 +35,8 @@ public class Example001_LocalVariableTypeInference {
             // Cannot infer type:
             //        var a;
             //        var nothing = null;
-//                    var lambda = () -> System.out.println("Pity!");
-            //        var method = this::someMethod;
+//                    var lambda = () -> System.out.println("Pity!"); // which functional interface?
+//                    var method = this::someMethod;
 
 
             // Local variable type inference really shines with generics involved.
@@ -49,7 +52,7 @@ public class Example001_LocalVariableTypeInference {
             // parameters which enables you to add annotations to those parameters
             Predicate<String> predicate = (@Nullable var a) -> true;
 
-            // Non denotable types
+            // Non denotable types - var can handle types that cannot be represented on the left hand side of a declaration.
             var foo = new Foo<>();
             var op = foo.op();
             System.out.println(op);

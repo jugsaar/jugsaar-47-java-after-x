@@ -11,6 +11,7 @@ public class Example010_OtherFeatures {
         - Java REPL (JShell)
         - Flight Recorder
         - Unicode 10
+        - Separation of JavaFX: OpenJFX https://openjfx.io/
         - G1: Full Parallel Garbage Collector
         - ZGC: Scalable Low-Latency Garbage Collector
         - Epsilon: No-Op Garbage Collector

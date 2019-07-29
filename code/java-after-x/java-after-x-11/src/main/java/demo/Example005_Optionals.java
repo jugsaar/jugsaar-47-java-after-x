@@ -16,7 +16,16 @@ public class Example005_Optionals {
                 .or(() -> Optional.of("fallback"))
                 .get();                           // fallback
 
-        Optional.ofNullable(null).isEmpty(); // inverse to isPresent
+        Optional<Object> opt = Optional.ofNullable(null);
+        // before Java 11
+        if (!opt.isPresent()) {
+            // ...
+        }
+
+        // with Java 11
+        if (opt.isEmpty()) {
+            // inverse to isPresent
+        }
 
         String x = "";
         if (x == null) {

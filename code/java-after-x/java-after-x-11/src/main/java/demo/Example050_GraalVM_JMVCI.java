@@ -2,7 +2,7 @@ package demo;
 
 import java.util.concurrent.TimeUnit;
 
-public class Example020_GraalVM_JMVCI {
+public class Example050_GraalVM_JMVCI {
 
     public static void main(String[] args) {
 

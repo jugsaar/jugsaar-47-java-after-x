@@ -14,9 +14,11 @@ import java.util.concurrent.Executors;
  * Java 9 introduced a new incubating HttpClient API for dealing with HTTP requests.
  * As of Java 11 this API is now final and available in the standard libraries package java.net. Let's explore what we can do with this API.
  */
-public class Example002_HttpClientExample {
+public class Example020_HttpClientExample {
 
     public static void main(String[] args) throws Exception {
+
+        // package import java.net.http;
 
         demo1();
 //        System.out.println("#########");
@@ -51,8 +53,14 @@ public class Example002_HttpClientExample {
          */
         var client = HttpClient.newHttpClient();
 
-        HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
-        
+        HttpResponse.BodyHandler<String> asString = HttpResponse.BodyHandlers.ofString();
+        /*
+         * HttpResponse.BodyHandlers
+         *    .olfLines() | .ofByteArray() | ofFile() | ofFileDownload()
+         */
+
+        HttpResponse<String> response = client.send(request, asString);
+
         int statusCode = response.statusCode();
         System.out.printf("Status Code: %s%n", statusCode);
         HttpHeaders headers = response.headers();
