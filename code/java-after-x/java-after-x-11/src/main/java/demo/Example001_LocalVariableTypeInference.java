@@ -5,6 +5,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.function.Consumer;
 import java.util.function.Predicate;
 
 /**
@@ -24,17 +25,17 @@ public class Example001_LocalVariableTypeInference {
             var var2 = "Hello Java 10";
 
             var var3 = "Hello Java 11";
-            // var3 = 23;  // Incompatible types -> inferred type is String
+//            var3 = 23;  // Incompatible types -> inferred type is String
 
             // var combined with final
             final var var4 = "Banana";
-            // var4 = "Joe";   // Cannot assign a value to final variable 'text'
+            //var4 = "Joe";   // Cannot assign a value to final variable 'text'
 
 
             // Some problematic examples
             // Cannot infer type:
-            //        var a;
-            //        var nothing = null;
+//                    var a;
+//                    var nothing = null;
 //                    var lambda = () -> System.out.println("Pity!"); // which functional interface?
 //                    var method = this::someMethod;
 

@@ -6,6 +6,7 @@ public class Example050_GraalVM_JMVCI {
 
     public static void main(String[] args) {
 
+        // -XX:+UnlockCommercialOptions
         // -XX:+UnlockExperimentalVMOptions -XX:+EnableJVMCI -XX:+UseJVMCICompiler
         StringHash.main(args);
     }

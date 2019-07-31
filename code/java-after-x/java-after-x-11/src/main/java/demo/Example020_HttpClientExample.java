@@ -20,14 +20,14 @@ public class Example020_HttpClientExample {
 
         // package import java.net.http;
 
-        demo1();
+//        demo1();
 //        System.out.println("#########");
 //
 //        demo2();
 //
 //        System.out.println("#########");
 //
-//        demo3();
+        demo3();
     }
 
     /**
@@ -56,7 +56,7 @@ public class Example020_HttpClientExample {
         HttpResponse.BodyHandler<String> asString = HttpResponse.BodyHandlers.ofString();
         /*
          * HttpResponse.BodyHandlers
-         *    .olfLines() | .ofByteArray() | ofFile() | ofFileDownload()
+         *    .olLines() | .ofByteArray() | ofFile() | ofFileDownload()
          */
 
         HttpResponse<String> response = client.send(request, asString);
@@ -91,7 +91,8 @@ public class Example020_HttpClientExample {
          */
 
         var client = HttpClient.newHttpClient();
-        CompletableFuture<HttpResponse<String>> responseFuture = client.sendAsync(request, HttpResponse.BodyHandlers.ofString());
+        CompletableFuture<HttpResponse<String>> responseFuture = //
+                client.sendAsync(request, HttpResponse.BodyHandlers.ofString());
 
         responseFuture
                 .thenApply(HttpResponse::body)
@@ -121,9 +122,9 @@ public class Example020_HttpClientExample {
 
         var responseFuture = client.sendAsync(postRequest, HttpResponse.BodyHandlers.ofString());
 
-        responseFuture.thenApply(response -> {
-            System.out.printf("StatusCode: %s%n", response.statusCode());
-            return response;
+        responseFuture.thenApply(res -> {
+            System.out.printf("StatusCode: %s%n", res.statusCode());
+            return res;
         })
                 .thenApply(HttpResponse::body)
                 .thenAccept(System.out::println)

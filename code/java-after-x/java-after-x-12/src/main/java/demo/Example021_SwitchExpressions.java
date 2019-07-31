@@ -11,22 +11,13 @@ public class Example021_SwitchExpressions {
 
     public static int pollutionOf(Plastics plastics) {
 
-        int pollution = -1;
-
-        switch (plastics) {
-            case SPOON:
-                pollution = 10;
-                break;
-            case STRAW:
-                pollution = 11;
-                break;
-            case BOTTLE:
-                pollution = 30;
-                break;
-            case CUP:
-                pollution = 11;
-                break;
-        }
+        int pollution = switch (plastics) {
+            case SPOON -> {
+                break 10;
+            }
+            case STRAW, CUP -> 11;
+            case BOTTLE -> 30;
+        };
 
         return pollution;
     }

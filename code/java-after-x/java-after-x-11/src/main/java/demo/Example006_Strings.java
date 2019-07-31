@@ -6,6 +6,8 @@ public class Example006_Strings {
 
         // some nice helper methods...
 
+//        " fhjkfhdfsjkhf ";
+
         " ".isBlank();                // true
 
         "     ".isBlank();                // true
@@ -23,9 +25,9 @@ public class Example006_Strings {
         "A\nB\nC".lines().count();    // 3
 
 
-        christmasTreeOld();
+//        christmasTreeOld();
 
-//        christmasTreeNew();
+        christmasTreeNew();
     }
 
 
